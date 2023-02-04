@@ -1,0 +1,26 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>My Fictional Dog</h1>
+    <div id="dogInfo">
+    </div>
+    <script>
+      function Dog(name, breed, owner, traits, mySound, canTalk) {
+        this.name = name;
+        this.breed = breed;
+        this.owner = owner;
+        this.traits = traits;
+        this.mySound = mySound;
+        this.canTalk = canTalk;
+        this.myGreeting = function() {
+          let dogInfo = document.getElementById("dogInfo");
+          dogInfo.innerHTML = `Meet ${this.name}, a ${this.breed} who is owned by ${this.owner}. ${this.name} is known for being ${this.traits[0]}, ${this.traits[1]}, and ${this.traits[2]}. ${this.name} ${this.canTalk ? "can talk and says" : "barks"} "${this.mySound}"`;
+        };
+      }
+      
+      let myDogConst = new Dog("Scooby-Doo", "Great Dane", "Mystery Inc.", ["Brave", "Hungry", "Friendly"], "Ruh-roh, Raggy!", false);
+      myDogConst.myGreeting();
+    </script>
+  </body>
+</html>
